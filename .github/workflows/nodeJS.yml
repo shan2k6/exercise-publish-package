@@ -30,4 +30,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: debug
         if: ${{ failure() }}
-        run:  cat /home/runner/.npm/_logs/*-debug.log
+        run: |
+              cat /home/runner/.npm/_logs/*-debug.log
+              echo "--------------------------------"
+              cat   finf -name .npmrc -exec cat {} \;
