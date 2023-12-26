@@ -29,5 +29,5 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: debug
-        if: ${{ error }}
-        run:  cat /home/runner/.npm/_logs/2023-12-26T12_01_55_893Z-debug.log
+        if: ${{ failure() }}
+        run:  cat /home/runner/.npm/_logs/*-debug.log
