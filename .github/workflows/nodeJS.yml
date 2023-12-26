@@ -18,6 +18,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - run: rm  -f /home/runner/.npm/_logs/*-debug.log
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:
@@ -25,7 +26,8 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - run: npm i
       - run: npm publish
-        with: 
-          registry-url: https://npm.pkg.github.com/
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: debug
+        if: ${{ error }}
+        run:  cat /home/runner/.npm/_logs/2023-12-26T12_01_55_893Z-debug.log
