@@ -32,5 +32,5 @@ jobs:
         if: ${{ failure() }}
         run: |
               cat /home/runner/.npm/_logs/*-debug.log
-              echo "--------------------------------"
-              cat ~/.npmrc 
+      
+          
