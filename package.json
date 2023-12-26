@@ -1,5 +1,8 @@
 {
   "name": "shan-sunny-package",
   "version": "1.0.0",
-  "author": "Shan Sunny shan.sunny@kyndryl.com"
+  "author": "Shan Sunny shan.sunny@kyndryl.com",
+  "publishConfig": {
+  "registry": "https://npm.pkg.github.com"
+}
 }
