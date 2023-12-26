@@ -33,4 +33,4 @@ jobs:
         run: |
               cat /home/runner/.npm/_logs/*-debug.log
               echo "--------------------------------"
-              find -name .npmrc -exec cat {} \;
+              cat ~/.npmrc 
