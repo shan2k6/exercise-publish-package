@@ -7,23 +7,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
         with:
-          node-version: 12
-      - run: npm ci
+          node-version: 16
+      - run: npm i
       - run: npm test
 
   publish-gpr:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - run: rm  -f /home/runner/.npm/_logs/*-debug.log
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
         with:
-          node-version: 12
+          node-version: 16
           registry-url: https://npm.pkg.github.com/
-      - run: npm ci
+      - run: npm i
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: debug
+        if: ${{ failure() }}
+        run: |
+              cat /home/runner/.npm/_logs/*-debug.log
+      
+          
