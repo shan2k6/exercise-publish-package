@@ -1,7 +1,10 @@
 {
-  "name": "shan-sunny-package",
+  "name": "@shan2k6/shan-sunny-package",
   "version": "1.0.0",
   "author": "Shan Sunny shan.sunny@kyndryl.com",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
   "publishConfig": {
   "registry": "https://npm.pkg.github.com"
 }
