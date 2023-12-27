@@ -1,6 +1,6 @@
 {
   "name": "@shan2k6/shan-sunny-package",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Shan Sunny shan.sunny@kyndryl.com",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
